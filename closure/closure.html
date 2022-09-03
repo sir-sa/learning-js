@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Closure</title>
+    </head>
+
+    <body>
+        <h1>For loops conditions</h1>
+        <p id="demo"></p>
+    </body>
+    <script>
+       var a =10;
+       function first_func(){
+        var b =30;
+        function second_func(){
+            var c= a+b;
+            return c;
+        }
+        return second_func()
+       }
+
+       var sum = first_func();
+       document.write('The sum is' + sum + '<br>')
+    </script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript objects</title>
+    </head>
+
+    <body>
+        <h1>Creating javascript object methods</h1>
+
+        <p id="demo"></p>
+        
+    </body>
+    <script>
+        let cars={
+            model: "Rager",
+            color: "navy green",
+            fuel_type: "Diesel",
+            get fuel(){
+                return this.fuel_type;
+            }
+            
+         }
+         document.getElementById('demo').innerHTML =cars.fuel;
+    </script>
+    <script>
+        let car={
+            model: "Audi A5",
+            color: "gray",
+            fuel_type: "",
+            set fuel(fuel){
+                return this.fuel_type = fuel;
+            }
+            
+         }
+         car.fuel="Petrol";
+
+         document.getElementById('demo').innerHTML =car.fuel_type;
+    </script>
+
+    
+</html>

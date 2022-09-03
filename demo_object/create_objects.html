@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript objects</title>
+    </head>
+
+    <body>
+        <h1>Creating javascript objects</h1>
+
+        <p id="demo"></p>
+    </body>
+    <!-- <script>
+         var student={
+            name: "samuel",
+            age:26,
+            studies:"BIT"
+         }
+         document.getElementById('demo').innerHTML=student.name + " of age " + student.age + " studies " + student.studies;
+    </script> -->
+
+    <!-- //create objects -->
+    <script>
+        var stud = new Object();
+        stud.name="koki";
+        stud.age=21;
+        stud.studies="BIT";
+        document.getElementById('demo').innerHTML=stud.name + " of age " + stud.age + " studies " + stud.studies;
+
+    </script>
+
+    <!-- creating object using constructor -->
+    <script>
+        function pupil(name, age, studies){
+            this.name = name;
+            this.age = age;
+            this.studies = studies;
+        }
+        const student = new pupil("samuel koki", 24, "BIT");
+        document.getElementById('demo').innerHTML= student.name + " of age " + student.age + " studies " + student.studies;
+    </script>
+</html>

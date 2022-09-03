@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Closure</title>
+    </head>
+
+    <body>
+        <h1>Async</h1>
+        <p id="demo"></p>
+    </body>
+    <script>
+        let result =function(score){
+            return new Promise(function(resolve,reject){
+                console.log("Calculating results.....")
+                if(score>50)
+                    resolve("Congratulation! You have passed");
+                else
+                    resolve("You have Failed!!");
+            })
+        }
+        let grade = function(response){
+            return new Promise(function(resolve,reject){
+                console.log("Calculating Your grade.....")
+                resolve('Your Grade is A. ' +response)
+            })
+        }
+
+        // result(70).then(response=>{
+        //     console.log("Results received")
+        //     return grade(response)
+        // }).then(finalgrade =>{
+        //     console.log(finalgrade)
+        // }).catch(err => {
+        //     console.log(err)
+        // })
+
+        async function calculateResults(){
+            try{
+                const response = await result(25)
+                console.log("Results response")
+                const finalgrade = await grade(response)
+                console.log(finalgrade)
+                } catch(err){
+                    console.log(err)
+            }
+        }
+
+        calculateResults();
+
+    </script>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript objects</title>
+    </head>
+
+    <body>
+        <h1>Creating javascript functions</h1>
+
+        <p id="demo"></p>
+        
+    </body>
+    <script>
+        function my_function(val){
+            document.getElementById('demo').innerHTML=val*val;
+        }
+        my_function(5)
+    </script> 
+    <script>
+        let x = function(){
+            alert("hello");
+        }
+        document.getElementById('demo').innerHTML=x();
+    </script>
+    <!-- // function constructor -->
+    <script>
+        var myfunction =new Function("a","b","return a*b")
+        var y=myfunction(2,3)
+        document.getElementById('demo').innerHTML=y;
+    </script>
+
+    <!-- self-invoking functions -->
+
+    <script>
+        (function(){
+            alert('hello sam');
+        })();
+    </script>
+    <script>
+        function product(a, b){
+            return a*b;
+        }
+        let j=product(2,4);
+        document.getElementById('demo').innerHTML=j;
+
+    </script>
+
+    <!-- function as an object -->
+    <script>
+        var body="return Math.PI * rad * rad "
+        var circle=new Function("rad",body)
+        alert(circle(5));
+    </script>
+
+    <!-- arrow functions -->
+    <script>
+        const myfunc=(a,b,c) =>{
+            return a*b*c;
+        }
+        let products=myfunc(2,3,4);
+        document.getElementById('demo').innerHTML=products;
+    </script>
+
+    <!-- generator functions -->
+    <script>
+        function* generateFunc(){
+            yield 1;
+            yield 2;
+            return 3;
+        }
+        let generator = generateFunc()
+        let one =generator.next()
+        let two =generator.next()
+        let three =generator.next()
+        alert(JSON.stringify(one));
+        alert(JSON.stringify(two));
+        alert(JSON.stringify(three));
+    </script>
+
+    
+
+    
+</html>
